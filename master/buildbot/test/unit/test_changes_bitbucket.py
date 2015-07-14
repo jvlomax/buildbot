@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import re
 
@@ -26,7 +27,7 @@ from twisted.web import client
 from twisted.web.error import Error
 
 
-class SourceRest():
+class SourceRest(object):
     template = """\
 {
 
@@ -78,7 +79,7 @@ class SourceRest():
         }
 
 
-class PullRequestRest():
+class PullRequestRest(object):
     template = """\
 {
 
@@ -134,7 +135,7 @@ class PullRequestRest():
         }
 
 
-class PullRequestListRest():
+class PullRequestListRest(object):
     template = """\
         {
             "description": "%(description)s",

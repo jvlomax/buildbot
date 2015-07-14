@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 from buildbot.schedulers import base
 from buildbot.test.fake import fakedb
@@ -148,7 +149,7 @@ class SchedulerMixin(interfaces.InterfaceTests):
         else:
             del self.master.data.updates.schedulerMasters[self.sched.objectid]
 
-    class FakeChange:
+    class FakeChange(object):
         who = ''
         files = []
         comments = ''

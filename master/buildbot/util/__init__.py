@@ -12,7 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
-
+from builtins import object
 
 import calendar
 import datetime
@@ -104,7 +104,7 @@ class ComparableMixin(object):
     implements(IConfigured)
     compare_attrs = []
 
-    class _None:
+    class _None(object):
         pass
 
     def __hash__(self):
@@ -204,7 +204,7 @@ def toJson(obj):
 # is always false.
 
 
-class NotABranch:
+class NotABranch(object):
 
     def __nonzero__(self):
         return False

@@ -12,7 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
-
+from builtins import object
 
 import datetime
 import os
@@ -494,7 +494,7 @@ class BuildMaster(service.ReconfigurableServiceMixin, service.MasterService):
         return d
 
 
-class Control:
+class Control(object):
     implements(interfaces.IControl)
 
     def __init__(self, master):

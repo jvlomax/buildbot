@@ -12,13 +12,14 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 # this is here for compatibility
 from collections import defaultdict
 assert defaultdict
 
 
-class KeyedSets:
+class KeyedSets(object):
 
     def __init__(self):
         self.d = dict()

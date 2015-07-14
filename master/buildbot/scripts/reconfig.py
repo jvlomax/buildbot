@@ -13,6 +13,7 @@
 #
 # Copyright Buildbot Team Members
 from __future__ import print_function
+from builtins import object
 
 import os
 import platform
@@ -26,7 +27,7 @@ from buildbot.scripts.logwatcher import ReconfigError
 from buildbot.util import in_reactor
 
 
-class Reconfigurator:
+class Reconfigurator(object):
 
     rc = 0
 

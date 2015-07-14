@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 from buildbot import util
 from buildbot.util import misc
@@ -71,7 +72,7 @@ class deferredLocked(unittest.TestCase):
     def test_method(self):
         testcase = self
 
-        class C:
+        class C(object):
 
             @util.deferredLocked('aLock')
             def check_locked(self, arg1, arg2):

@@ -22,7 +22,7 @@ from twisted.python import reflect
 from buildbot import util
 from buildbot.util import config
 
-
+#TODO: This class has issues with newstyle classes. Fix after invesigation
 class ReconfigurableServiceMixin:
 
     reconfig_priority = 128

@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import time
 
@@ -21,7 +22,7 @@ from buildbot.util.eventual import eventually
 from zope.interface import implements
 
 
-class SlaveStatus:
+class SlaveStatus(object):
     implements(interfaces.ISlaveStatus)
 
     admin = None

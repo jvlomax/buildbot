@@ -13,6 +13,7 @@
 #
 # Copyright Buildbot Team Members
 from __future__ import print_function
+from builtins import object
 
 import os
 import platform
@@ -25,7 +26,7 @@ from twisted.protocols.basic import LineOnlyReceiver
 from twisted.python.failure import Failure
 
 
-class FakeTransport:
+class FakeTransport(object):
     disconnecting = False
 
 

@@ -12,7 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
-
+from builtins import object
 
 from buildbot import util
 from buildbot.util import subscription
@@ -26,7 +26,7 @@ else:
     debuglog = lambda m: None
 
 
-class BaseLock:
+class BaseLock(object):
 
     """
     Class handling claiming and releasing of L{self}, and keeping track of
@@ -188,7 +188,7 @@ class RealMasterLock(BaseLock):
         return self
 
 
-class RealSlaveLock:
+class RealSlaveLock(object):
 
     def __init__(self, lockid):
         self.name = lockid.name

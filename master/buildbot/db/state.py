@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import sqlalchemy as sa
 import sqlalchemy.exc
@@ -86,7 +87,7 @@ class StateConnectorComponent(base.DBConnectorComponent):
 
         return ObjDict(id=select())
 
-    class Thunk:
+    class Thunk(object):
         pass
 
     def getState(self, objectid, name, default=Thunk):

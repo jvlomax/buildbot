@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 from twisted.internet import defer
 from twisted.python import log
@@ -168,7 +169,7 @@ class AbstractSlaveBuilder(object):
         self.remoteCommands = None
 
 
-class Ping:
+class Ping(object):
     running = False
 
     def ping(self, conn):

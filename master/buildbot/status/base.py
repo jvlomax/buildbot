@@ -12,7 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
-
+from builtins import object
 
 from buildbot.util import service
 from zope.interface import implements
@@ -22,7 +22,7 @@ from buildbot import util
 from buildbot.interfaces import IStatusReceiver
 
 
-class StatusReceiverBase:
+class StatusReceiverBase(object):
     implements(IStatusReceiver)
 
     def requestSubmitted(self, request):

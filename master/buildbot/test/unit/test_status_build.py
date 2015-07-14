@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import mock
 
@@ -23,7 +24,7 @@ from twisted.trial import unittest
 from zope.interface import implements
 
 
-class FakeBuilderStatus:
+class FakeBuilderStatus(object):
     implements(interfaces.IBuilderStatus)
 
 

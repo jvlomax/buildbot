@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import mock
 import os
@@ -766,7 +767,7 @@ class TestGitPoller(gpo.GetProcessOutputMixin,
         self.patch(self.poller, '_get_commit_comments', comments)
 
         # do the poll
-        class TestCallable:
+        class TestCallable(object):
 
             def __call__(self, branch):
                 return branch == "refs/heads/master"

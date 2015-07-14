@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import re
 import textwrap
@@ -156,7 +157,7 @@ class TestShellCommandExecution(steps.BuildStepMixin, unittest.TestCase, configm
         self.assertLegacySummary(step, None)
 
     def test_getLegacySummary_unrendered_custom_old_style_class_renderable(self):
-        class C:
+        class C(object):
             pass
         step = shell.ShellCommand(command=C())
         step.rendered = True

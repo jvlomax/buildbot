@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import operator
 
@@ -40,7 +41,7 @@ from mock import Mock
 from mock import call
 
 
-class FakeChange:
+class FakeChange(object):
     properties = Properties()
 
     def __init__(self, number=None):
@@ -48,7 +49,7 @@ class FakeChange:
         self.who = "me"
 
 
-class FakeSource:
+class FakeSource(object):
 
     def __init__(self):
         self.sourcestampsetid = None
@@ -65,7 +66,7 @@ class FakeSource:
         return self.repository
 
 
-class FakeRequest:
+class FakeRequest(object):
 
     def __init__(self):
         self.sources = []
@@ -80,7 +81,7 @@ class FakeRequest:
         return self.reason
 
 
-class FakeBuildStep:
+class FakeBuildStep(object):
 
     def __init__(self):
         self.haltOnFailure = False
@@ -92,7 +93,7 @@ class FakeBuildStep:
         self.name = 'fake'
 
 
-class FakeBuilder:
+class FakeBuilder(object):
 
     def __init__(self, master):
         self.config = Mock()

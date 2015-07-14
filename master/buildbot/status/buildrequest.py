@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 from buildbot import interfaces
 from buildbot.util.eventual import eventually
@@ -20,7 +21,7 @@ from twisted.python import log
 from zope.interface import implements
 
 
-class BuildRequestStatus:
+class BuildRequestStatus(object):
     implements(interfaces.IBuildRequestStatus)
 
     def __init__(self, buildername, brid, status, brdict=None):

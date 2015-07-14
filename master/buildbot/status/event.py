@@ -12,13 +12,14 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 from buildbot import interfaces
 from buildbot import util
 from zope.interface import implements
 
 
-class Event:
+class Event(object):
     implements(interfaces.IStatusEvent)
 
     started = None

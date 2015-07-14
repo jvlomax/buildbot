@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import re
 import sys
@@ -55,7 +56,7 @@ are more suitable for use in MTR.
         return not self.__eq__(other)
 
 
-class MtrTestFailData:
+class MtrTestFailData(object):
 
     def __init__(self, testname, variant, result, info, text, callback):
         self.testname = testname

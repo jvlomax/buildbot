@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 from buildbot import config
 from buildbot import util
@@ -44,7 +45,7 @@ class BaseBasicScheduler(base.BaseScheduler):
     fileIsImportant = None
     reason = ''
 
-    class NotSet:
+    class NotSet(object):
         pass
 
     def __init__(self, name, shouldntBeSet=NotSet, treeStableTimer=None,

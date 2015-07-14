@@ -12,6 +12,8 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
+
 import time
 
 from buildbot.util import datetime2epoch
@@ -24,8 +26,8 @@ from buildbot import interfaces
 from buildbot import util
 from buildbot.process.properties import Properties
 
-
-class Change:
+#TODO: This class can not be newstyle atm. Fix when solution found
+class Change(object):
 
     """I represent a single change to the source tree. This may involve several
     files, but they are all changed by the same person, and there is a change

@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 from twisted.internet import defer
 from twisted.internet import utils
@@ -54,7 +55,7 @@ class Expect(object):
         return "<gpo.Expect(bin=%s, args=%s)>" % (self._bin, self._args)
 
 
-class GetProcessOutputMixin:
+class GetProcessOutputMixin(object):
 
     def setUpGetProcessOutput(self):
         self._gpo_patched = False

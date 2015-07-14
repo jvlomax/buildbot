@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import datetime
 
@@ -715,9 +716,9 @@ class Tests(interfaces.InterfaceTests):
 class TestFakeDB(unittest.TestCase, Tests):
     # Compatiblity with some checks in the "real" tests.
 
-    class db_engine:
+    class db_engine(object):
 
-        class dialect:
+        class dialect(object):
             name = 'buildbot_fake'
 
     def setUp(self):

@@ -12,13 +12,14 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import mock
 
 from twisted.internet import defer
 
 
-class PBManagerMixin:
+class PBManagerMixin(object):
 
     def setUpPBChangeSource(self):
         "Set up a fake self.pbmanager."

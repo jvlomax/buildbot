@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 from buildbot.clients import sendchange as sendchange_client
 from buildbot.scripts import sendchange
@@ -23,7 +24,7 @@ from twisted.trial import unittest
 
 class TestSendChange(misc.StdoutAssertionsMixin, unittest.TestCase):
 
-    class FakeSender:
+    class FakeSender(object):
 
         def __init__(self, testcase, master, auth, encoding=None):
             self.master = master

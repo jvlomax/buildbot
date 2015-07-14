@@ -40,7 +40,7 @@ class WWWService(service.ReconfigurableServiceMixin, service.AsyncMultiService):
     def __init__(self, master):
         service.AsyncMultiService.__init__(self)
         self.setName('www')
-        self.master = master
+        self._master = master
 
         self.port = None
         self.port_service = None
@@ -49,6 +49,14 @@ class WWWService(service.ReconfigurableServiceMixin, service.AsyncMultiService):
         # load the apps early, in case something goes wrong in Python land
         self.apps = get_plugins('www', None, load_now=True)
 
+
+    @property
+    def master(self):
+
+        return self._master
+    @master.setter
+    def set_master(self, master):
+        self._master = master
     @property
     def auth(self):
         return self.master.config.www['auth']

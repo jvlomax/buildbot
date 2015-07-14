@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import stat
 
@@ -225,7 +226,7 @@ class MakeDirectory(SlaveBuildStep):
         self.finished(SUCCESS)
 
 
-class CompositeStepMixin():
+class CompositeStepMixin(object):
     def addLogForRemoteCommands(self, logname):
         """This method must be called by user classes
         composite steps could create several logs, this mixin functions will write

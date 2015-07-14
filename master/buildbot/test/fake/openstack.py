@@ -13,6 +13,7 @@
 #
 # Portions Copyright Buildbot Team Members
 # Portions Copyright 2013 Cray Inc.
+from builtins import object
 
 import uuid
 
@@ -24,21 +25,21 @@ UNKNOWN = 'UNKNOWN'
 
 
 # Parts used from novaclient.v1_1.
-class Client():
+class Client(object):
 
     def __init__(self, username, password, tenant_name, auth_url):
         self.images = Images()
         self.servers = Servers()
 
 
-class Images():
+class Images(object):
     images = []
 
     def list(self):
         return self.images
 
 
-class Servers():
+class Servers(object):
     fail_to_get = False
     fail_to_start = False
     gets_until_active = 2
@@ -71,7 +72,7 @@ class Servers():
 
 
 # This is returned by Servers.create().
-class Instance():
+class Instance(object):
 
     def __init__(self, id, servers, boot_args, boot_kwargs):
         self.id = id
@@ -88,5 +89,5 @@ class Instance():
 # Parts used from novaclient.exceptions.
 
 
-class NotFound():
+class NotFound(Exception):
     pass

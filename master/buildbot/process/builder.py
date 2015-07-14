@@ -12,7 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
-
+from builtins import object
 
 import weakref
 
@@ -526,7 +526,7 @@ class Builder(util_service.ReconfigurableServiceMixin,
         return buildrequest.BuildRequest.canBeCollapsed(self.master, brdict1, brdict2)
 
 
-class BuilderControl:
+class BuilderControl(object):
     implements(interfaces.IBuilderControl)
 
     def __init__(self, builder, control):

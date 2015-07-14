@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import datetime
 import dateutil.tz
@@ -265,7 +266,7 @@ class TestP4Poller(changesource.ChangeSourceMixin,
                        'changes', '-m', '1', '//depot/myproject/...').stdout(first_p4changes)
         )
 
-        class FakeTransport:
+        class FakeTransport(object):
 
             def __init__(self):
                 self.msg = None

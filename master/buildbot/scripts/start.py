@@ -13,6 +13,7 @@
 #
 # Copyright Buildbot Team Members
 from __future__ import print_function
+from builtins import object
 
 import os
 import sys
@@ -26,7 +27,7 @@ from twisted.internet import reactor
 from twisted.python.runtime import platformType
 
 
-class Follower:
+class Follower(object):
 
     def follow(self, basedir):
         self.rc = 0

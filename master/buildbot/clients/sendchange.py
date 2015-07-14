@@ -12,14 +12,14 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
-
+from builtins import object
 
 from twisted.cred import credentials
 from twisted.internet import reactor
 from twisted.spread import pb
 
 
-class Sender:
+class Sender(object):
 
     def __init__(self, master, auth=('change', 'changepw'), encoding='utf8'):
         self.username, self.password = auth

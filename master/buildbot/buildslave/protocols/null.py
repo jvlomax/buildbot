@@ -12,8 +12,8 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
-
 from __future__ import absolute_import
+from builtins import object
 
 from buildbot.buildslave.protocols import base
 from twisted.internet import defer
@@ -24,7 +24,7 @@ class Listener(base.Listener):
     pass
 
 
-class ProxyMixin():
+class ProxyMixin(object):
 
     def __init__(self, impl):
         assert isinstance(impl, self.ImplClass)

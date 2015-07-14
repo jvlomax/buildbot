@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import random
 import re
@@ -97,7 +98,7 @@ class ForceOptions(usage.Options):
             self['reason'] = " ".join(args)
 
 
-class BuildRequest:
+class BuildRequest(object):
     hasStarted = False
     timer = None
 

@@ -13,6 +13,8 @@
 #
 # Copyright Buildbot Team Members
 
+#TODO: This module can not import object from builtins
+
 import collections
 import re
 import weakref
@@ -153,7 +155,7 @@ class Properties(util.ComparableMixin):
         return defer.maybeDeferred(renderable.getRenderingFor, self)
 
 
-class PropertiesMixin:
+class PropertiesMixin(object):
 
     """
     A mixin to add L{IProperties} methods to a class which does not implement

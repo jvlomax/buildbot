@@ -12,6 +12,8 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
+
 import os
 import random
 import re
@@ -50,7 +52,7 @@ def output(*msg):
     log.msg(' '.join(map(str, msg)))
 
 
-class SourceStampExtractor:
+class SourceStampExtractor(object):
 
     def __init__(self, treetop, branch, repository):
         self.treetop = treetop

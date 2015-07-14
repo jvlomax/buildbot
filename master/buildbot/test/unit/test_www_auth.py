@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 import mock
 
@@ -26,7 +27,7 @@ from twisted.web.guard import HTTPAuthSessionWrapper
 from twisted.web.resource import IResource
 
 
-class AuthResourceMixin:
+class AuthResourceMixin(object):
 
     def setUpAuthResource(self):
         self.master = self.make_master(url='h:/a/b/')

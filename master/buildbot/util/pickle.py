@@ -14,6 +14,7 @@
 # Copyright Buildbot Team Members
 from __future__ import print_function
 
+
 import cPickle
 import cStringIO
 import new
@@ -120,7 +121,7 @@ class SourceStamp(styles.Versioned):  # pragma: no cover
 substituteClasses['buildbot.sourcestamp', 'SourceStamp'] = SourceStamp
 
 
-class ChangeMaster:  # pragma: no cover
+class ChangeMaster(object):  # pragma: no cover
 
     def __init__(self):
         self.changes = []
@@ -435,7 +436,7 @@ class LogFileScanner(netstrings.NetstringParser):
             self.chunk_cb((channel, line[1:]))
 
 
-class LogFile:
+class LogFile(object):
 
     """
     A LogFile keeps all of its contents on disk, in a non-pickle format to
@@ -718,7 +719,7 @@ substituteClasses['buildbot.status.logfile', 'HTMLLogFile'] = HTMLLogFile
 substituteClasses['buildbot.status.builder', 'HTMLLogFile'] = HTMLLogFile
 
 
-class StepProgress:
+class StepProgress(object):
 
     """I keep track of how much progress a single BuildStep has made.
 
@@ -829,7 +830,7 @@ class StepProgress:
 substituteClasses['buildbot.status.progress', 'StepProgress'] = StepProgress
 
 
-class WatcherState:
+class WatcherState(object):
 
     def __init__(self, interval):
         self.interval = interval
@@ -972,7 +973,7 @@ class BuildProgress(pb.Referenceable):
 substituteClasses['buildbot.status.progress', 'BuildProgress'] = BuildProgress
 
 
-class Expectations:
+class Expectations(object):
     debug = False
     # decay=1.0 ignores all but the last build
     # 0.9 is short time constant. 0.1 is very long time constant

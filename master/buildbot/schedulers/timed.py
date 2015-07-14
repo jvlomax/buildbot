@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from builtins import object
 
 from zope.interface import implements
 
@@ -41,7 +42,7 @@ class Timed(base.BaseScheduler, AbsoluteSourceStampsMixin):
                      'branch', 'fileIsImportant', 'change_filter', 'onlyImportant')
     reason = ''
 
-    class NoBranch:
+    class NoBranch(object):
         pass
 
     def __init__(self, name, builderNames, reason='',
